@@ -6,7 +6,7 @@
 
 const express = require('express')
 const cors = require('cors')
-const dbConnection = require('./db/conexion')
+const dbConnection = require('./src/db/conexion')
 require('dotenv').config()
 const morgan = require('morgan')
 
@@ -27,9 +27,10 @@ app.use(morgan('combined'))
 
 //Routes
 
-app.use(require('./routes/tasks.routes'))
-app.use(require('./routes/user.routes'))
-app.use(require('./routes/auth.routes'))
+app.use(require('./src/routes/tasks.routes'))
+app.use(require('./src/routes/user.routes'))
+app.use(require('./src/routes/auth.routes'))
+app.use(require('./src/routes/routesComent'))
 
 
 //Inicializar servidor
