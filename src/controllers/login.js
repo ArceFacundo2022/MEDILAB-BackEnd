@@ -5,10 +5,10 @@ const generarJWT = require("../helpers/generar-jwt");
 const ctrlAuth = {};
 
 ctrlAuth.iniciarSesion = async (req, res) => {
-  const { user, password } = req.body;
+  const { dni, password } = req.body;
 
   try {
-    const usuario = await User.findOne({ user });
+    const usuario = await User.findOne({ dni });
 
     if (!usuario) {
       return res.json({
