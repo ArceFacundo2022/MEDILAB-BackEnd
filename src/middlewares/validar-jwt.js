@@ -7,7 +7,6 @@ const validarJWT = async (req,res,next)=>{
 
     //LLEGA EL TOKEN DEL HEADER Y SE ALMACENA EN LA VAR
     let token = req.headers.authorization;
-    console.log(token)
 
     //Se verifica si el token existe en la peticion
 

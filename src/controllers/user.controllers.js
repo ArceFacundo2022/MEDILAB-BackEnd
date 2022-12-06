@@ -16,6 +16,15 @@ ctrlUser.getUser = async (req, res) => {
     return res.json(users)
 }
 
+ctrlUser.getUserForDNI = async (req, res) => {
+
+    const dni = req.params.dni
+
+    const users = await User.findOne({dni:dni})
+
+    return res.json(users)
+}
+
 //Controlador para crear un nuevo usuario (POST)
 
 ctrlUser.postUser = async (req, res) => {

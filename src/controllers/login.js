@@ -34,12 +34,10 @@ ctrlAuth.iniciarSesion = async (req, res) => {
     }
 
     //SI PASA LAS VALIDACIONES EL TOKEN SE GENERA Y SE MUESTRA
-    console.log("LLEGUE ACA");
     // Generar el token
     const token = await generarJWT({ uid:usuario.id });
-    console.log({uid:usuario.id})
     return res.json({
-      token
+      token, id : usuario._id
     });
   } catch (error) {
     return res.json({ msg: "ERROR AL GENERAR TOKEN" });
